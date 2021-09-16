@@ -33,13 +33,19 @@
         </div>
         <div class="form-container sign-in-container str">
             <form action="login_success.html">
-                <h1>登录</h1>
-
-                <span>请输入您的账号</span>
-                <input type="text"  placeholder="用户名/学号" >
-                <input type="password">
+                <div class="container">
+                    <div class="title1">
+                        <h1>登录</h1>
+                    <span>请输入您的账号</span>
+                    </div>
+                    <div class="title2">
+                        <span class="errorMsg"></span>
+                    </div>                   
+                </div> 
+                <input type="text" placeholder="用户名/学号 如:2018302624" id="username">
+                <input type="password" placeholder="密码" id="password">
                 <a href="resetpwd.html">忘记密码？</a>
-                <button>登录</button>
+                <button class="btn1">登录</button>
             </form>
         </div>
         <div class="overlay-container">

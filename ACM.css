@@ -105,6 +105,25 @@ button.ghost {
 .str a:hover{
     color:rgb(0, 255, 149);
 }
+.container{
+    width: 320px;
+    height: 100px;
+    display: inline-block;
+}
+.errorMsg{
+    color:red;
+    font-size: medium;
+    font-weight: bold;
+    font-family: "楷体";
+}
+#username,#password{
+    border-radius: 20px;
+    border:1px solid aquamarine;
+}
+.title2{
+    float: right;
+    height: 40px;
+}
 .form-container {
     position:absolute;
     top:0;
