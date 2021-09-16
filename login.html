@@ -10,7 +10,9 @@
 
 
 <body>
-    <h1>欢迎来到ACM基地</h1>
+    <div class="title" style="margin-bottom: 40px;">
+        <h1>欢迎来到ACM基地</h1>
+    </div>
     <div class="dowebok" id="dowebok">
         <div class="form-container sign-up-container">
             <form action="user/addUser">
@@ -29,15 +31,14 @@
                 <button>注册</button>
             </form>
         </div>
-        <div class="form-container sign-in-container">
-            <form action="house/mainHouse">
+        <div class="form-container sign-in-container str">
+            <form action="login_success.html">
                 <h1>登录</h1>
 
-                <span>或使用您的帐号</span>
-                <input type="text" placeholder="身份证号">
-                <input type="text" placeholder="姓名">
-                <input type="password" placeholder="密码">
-                <a href="###">忘记密码？</a>
+                <span>请输入您的账号</span>
+                <input type="text"  placeholder="用户名/学号" >
+                <input type="password">
+                <a href="resetpwd.html">忘记密码？</a>
                 <button>登录</button>
             </form>
         </div>
