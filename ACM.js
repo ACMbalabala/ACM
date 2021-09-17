@@ -92,13 +92,13 @@ $(function () {
     }
 
     $(".errorMsg").text("");
-    alert("登录成功");
     axios({
       method: 'POST',
       url: 'http://localhost:3000/posts',
       data: {
         username: $("input#username").val(),
-        password:$("input#password").val()
+        password:$("input#password").val(),
+        csrf_token:$("input[name='csrfmiddlewaretoken']").val()
       }
     }).then(response=>{
       console.log(response);
