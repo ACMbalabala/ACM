@@ -95,11 +95,10 @@ $(function () {
     alert("登录成功");
     axios({
       method: 'POST',
-      url: 'http://localhost:3004/posts',
+      url: 'http://localhost:3000/posts',
       data: {
-        title: "wer",
-        author: "tr",
-        text: $("input#username").val()
+        username: $("input#username").val(),
+        password:$("input#password").val()
       }
     }).then(response=>{
       console.log(response);

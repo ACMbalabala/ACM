@@ -1,70 +1,19 @@
 {
   "posts": [
     {
-      "id": 1,
       "title": "json-server",
-      "author": "typicode"
+      "author": "typicode",
+      "id": "1"
     },
     {
-      "id": 2,
-      "title": "nihsao",
-      "author": "Tony"
+      "username": "2019302924",
+      "password": "xiongyutao",
+      "id": "2"
     },
     {
-      "title": "wer",
-      "author": "qweert",
-      "id": 3
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "id": 4
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "text": "rytry",
-      "id": 5
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "text": "rytry",
-      "id": 6
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "text": "rytry",
-      "id": 7
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "text": "rytry",
-      "id": 8
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "id": 9
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "id": 10
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "text": "2019302924",
-      "id": 11
-    },
-    {
-      "title": "wer",
-      "author": "tr",
-      "text": "2019302924",
-      "id": 12
+      "username": "2019302924",
+      "password": "asd",
+      "id": "7I6CVF5"
     }
   ],
   "comments": [
