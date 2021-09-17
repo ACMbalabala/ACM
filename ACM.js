@@ -92,6 +92,7 @@ $(function(){
         }
 
         $(".errorMsg").text("");
+        alert("登录成功");
         return false;
     })
 })
