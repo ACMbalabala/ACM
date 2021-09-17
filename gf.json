@@ -1,0 +1,80 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "nihsao",
+      "author": "Tony"
+    },
+    {
+      "title": "wer",
+      "author": "qweert",
+      "id": 3
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "id": 4
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "text": "rytry",
+      "id": 5
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "text": "rytry",
+      "id": 6
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "text": "rytry",
+      "id": 7
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "text": "rytry",
+      "id": 8
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "id": 9
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "id": 10
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "text": "2019302924",
+      "id": 11
+    },
+    {
+      "title": "wer",
+      "author": "tr",
+      "text": "2019302924",
+      "id": 12
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

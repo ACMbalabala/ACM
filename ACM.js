@@ -3,11 +3,11 @@ var signInButton = document.getElementById('signIn')
 var container = document.getElementById('dowebok')
 
 signUpButton.addEventListener('click', function () {
-    container.classList.add('right-panel-active')
+  container.classList.add('right-panel-active')
 })
 
 signInButton.addEventListener('click', function () {
-    container.classList.remove('right-panel-active')
+  container.classList.remove('right-panel-active')
 })
 
 const slider = document.querySelector('[data-slider]');
@@ -47,52 +47,62 @@ function removeCircle(circle) {
 
 function randomPosition() {
   return [
-  Math.random() * 100 + 1,
-  Math.random() * 100 + 1];
+    Math.random() * 100 + 1,
+    Math.random() * 100 + 1];
 
 }
 
 function randomColor() {
   const colors = [
-  '#81ecec',
-  '#74b9ff',
-  '#a29bfe',
-  '#ffeaa7',
-  '#fab1a0',
-  '#ff7675',
-  '#fd79a8'];
+    '#81ecec',
+    '#74b9ff',
+    '#a29bfe',
+    '#ffeaa7',
+    '#fab1a0',
+    '#ff7675',
+    '#fd79a8'];
 
 
   return colors[Math.round(Math.random() * colors.length)];
 }
 
-$(function(){
-    $(".btn1").click(function(){
-        var usernameText = $("#username").val();
-        var usernamePat = /^\w{10,11}$/;
-        if(usernameText==""){
-            $(".errorMsg").text("请输入用户名！");
-            $("#username").css("border-color","red");
-            return false;
-        }else if (!usernamePat.test(usernameText)) {
-            $(".errorMsg").text("用户名不合法");
-            $("#username").css("border-color","red");
-            return false;
-        }else{
-            $("#username").css("border-color","aquamarine");
-        }
+$(function () {
+  $(".btn1").click(function () {
+    var usernameText = $("#username").val();
+    var usernamePat = /^\w{10,11}$/;
+    if (usernameText == "") {
+      $(".errorMsg").text("请输入用户名！");
+      $("#username").css("border-color", "red");
+      return false;
+    } else if (!usernamePat.test(usernameText)) {
+      $(".errorMsg").text("用户名不合法");
+      $("#username").css("border-color", "red");
+      return false;
+    } else {
+      $("#username").css("border-color", "aquamarine");
+    }
 
-        var passwordText = $("#password").val();
-        if(passwordText==""){
-            $(".errorMsg").text("请输入密码！");
-            $("#password").css("border-color","red");
-            return false;
-        }else{
-            $("#password").css("border-color","aquamarine");
-        }
+    var passwordText = $("#password").val();
+    if (passwordText == "") {
+      $(".errorMsg").text("请输入密码！");
+      $("#password").css("border-color", "red");
+      return false;
+    } else {
+      $("#password").css("border-color", "aquamarine");
+    }
 
-        $(".errorMsg").text("");
-        alert("登录成功");
-        return false;
+    $(".errorMsg").text("");
+    alert("登录成功");
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3004/posts',
+      data: {
+        title: "wer",
+        author: "tr",
+        text: $("input#username").val()
+      }
+    }).then(response=>{
+      console.log(response);
     })
+  })
 })
