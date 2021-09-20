@@ -11,6 +11,7 @@
 
 
 <body>
+    
     <div class="controls">
         <label class="controls__label">Number of circles</label>
         <input class="controls__slider" data-slider type="range" min="100" max="500" step="1" value="300" />
@@ -24,15 +25,42 @@
                 <h1>注册</h1>
 
                 <span>请输入您的信息</span>
-                <input type="text" id="idcard" name="idcard" placeholder="身份证号" onblur="validate_idcard(this.value)">
+                <input type="text" id="StuID" name="StuID" placeholder="学号" onblur="validate_StuID(this.value)">
 
                 <input type="text" id="Username" name="username" placeholder="姓名"
                     onblur="validate_username(this.value)">
 
+                <input type="email" id="Email" name="email" placeholder="电子邮箱" onblur="validate_email(this.value)">
+
                 <input type="password" id="Password" name="password" placeholder="以字母开头只能包含字母、数字和下划线"
                     onblur="validate_password(this.value)">
+
                 <input type="password" id="Password2" name="password2" onblur="validate_password2(this.value)"
                     placeholder="确认密码">
+
+                <label for="EnqueueTime">入队时间：</label>
+                <input type="date" id="EnqueueTime" name="enqueuetime" onblur="validate_enqueuetime(this.value)">
+                <label for="department">学院：</label>
+                <select name="Department" id="department" onblur="validate_department(this.value)">
+                    <option value="软件学院">软件学院</option>
+                    <option value="计算机学院">计算机学院</option>
+                    <option value="自动化学院">自动化学院</option>
+                    <option value="航空学院">航空学院</option>
+                    <option value="航海学院">航海学院</option>
+                    <option value="航天学院">航天学院</option>
+                    <option value="材料学院">材料学院</option>
+                    <option value="机电学院">机电学院</option>
+                    <option value="力学与土木建筑学院">力学与土木建筑学院</option>
+                    <option value="数学与统计学院">数学与统计学院</option>
+                    <option value="动力与能源学院">动力与能源学院</option>
+                    <option value="电子信息学院">电子信息学院</option>
+                    <option value="物理科学与技术学院">物理科学与技术学院</option>
+                    <option value="化学与化工学院">化学与化工学院</option>
+                    <option value="管理学院">管理学院</option>
+                    <option value="公共政策与管理学院">公共政策与管理学院</option>
+                    <option value="生命学院">生命学院</option>
+                    <option value="外国语学院">外国语学院</option>
+                </select>
                 <button>注册</button>
             </form>
         </div>
