@@ -97,15 +97,15 @@ $(function () {
       url: 'http://localhost:3000/posts',
       data: {
         username: $("input#username").val(),
-        password:$("input#password").val(),
-        csrf_token:$("input[name='csrfmiddlewaretoken']").val()
+        password: $("input#password").val(),
+        csrf_token: $("input[name='csrfmiddlewaretoken']").val()
       }
-    }).then(response=>{
+    }).then(response => {
       console.log(response);
     })
   })
 
-  $(".btn2").click(function(){
+  $(".btn2").click(function () {
     var studentID = $("#StuID").val();
     var studentIDPat = /^[0-9]{10}$/;
     if (studentID == "") {
@@ -135,20 +135,55 @@ $(function () {
     }
 
     var email = $("#Email").val();
-    var studentNamePat = /^[\u4E00-\u9FA5A-Za-z]+$/;
-    if (studentName == "") {
-      $(".errorMsg2").text("请输入姓名！");
-      $("#Username").css("border-color", "red");
+    var emailPat = /^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/;
+    if (email == "") {
+      $(".errorMsg2").text("请输入邮箱！");
+      $("#Email").css("border-color", "red");
       return false;
-    } else if (!studentNamePat.test(studentName)) {
-      $(".errorMsg2").text("姓名不合法");
-      $("#Username").css("border-color", "red");
+    } else if (!emailPat.test(email)) {
+      $(".errorMsg2").text("邮箱地址不合法");
+      $("#Email").css("border-color", "red");
       return false;
     } else {
-      $("#Username").css("border-color", "aquamarine");
+      $("#Email").css("border-color", "aquamarine");
     }
 
 
+    var Password = $("#Password").val();
+    var PasswordPat = /^\w+$/;
+    if (Password == "") {
+      $(".errorMsg2").text("请输入密码！");
+      $("#Password").css("border-color", "red");
+      return false;
+    } else if (!PasswordPat.test(Password)) {
+      $(".errorMsg2").text("密码不合法");
+      $("#Password").css("border-color", "red");
+      return false;
+    } else {
+      $("#Password").css("border-color", "aquamarine");
+    }
+
+    var repassword = $("#Password2").val();
+    if (repassword == "") {
+      $(".errorMsg2").text("请输入密码！");
+      $("#Password2").css("border-color", "red");
+      return false;
+    } else if (repassword != Password) {
+      $(".errorMsg2").text("两次密码不相同！");
+      $("#Password2").css("border-color", "red");
+      return false;
+    } else {
+      $("#Password2").css("border-color", "aquamarine");
+    }
+
+    var date = $("#EnqueueTime").val();
+    if (date == "") {
+      $(".errorMsg2").text("请选择时间！");
+      $("#EnqueueTime").css("border-color", "red");
+      return false;
+    }else{
+      $("#EnqueueTime").css("border-color", "aquamarine");
+    }
 
     $(".errorMsg2").text("");
     return false;
