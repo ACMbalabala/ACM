@@ -67,6 +67,7 @@ function randomColor() {
 }
 
 $(function () {
+
   $(".btn1").click(function () {
     var usernameText = $("#username").val();
     var usernamePat = /^[0-9]{10}$/;
@@ -105,7 +106,7 @@ $(function () {
     })
   })
 
-  $(".btn2").click(function () {
+  $("#StuID").blur(function () {
     var studentID = $("#StuID").val();
     var studentIDPat = /^[0-9]{10}$/;
     if (studentID == "") {
@@ -119,7 +120,19 @@ $(function () {
     } else {
       $("#StuID").css("border-color", "aquamarine");
     }
+    $(".errorMsg2").text("");
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3000/posts',
+      data: {
+        username: $("input#StuID").val()
+      }
+    }).then(response => {
+      console.log(response);
+    })
+  })
 
+  $("#Username").blur(function () {
     var studentName = $("#Username").val();
     var studentNamePat = /^[\u4E00-\u9FA5A-Za-z]+$/;
     if (studentName == "") {
@@ -133,7 +146,10 @@ $(function () {
     } else {
       $("#Username").css("border-color", "aquamarine");
     }
+    $(".errorMsg2").text("");
+  })
 
+  $("#Email").blur(function () {
     var email = $("#Email").val();
     var emailPat = /^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/;
     if (email == "") {
@@ -147,8 +163,10 @@ $(function () {
     } else {
       $("#Email").css("border-color", "aquamarine");
     }
+    $(".errorMsg2").text("");
+  })
 
-
+  $("#Password").blur(function () {
     var Password = $("#Password").val();
     var PasswordPat = /^\w+$/;
     if (Password == "") {
@@ -162,7 +180,11 @@ $(function () {
     } else {
       $("#Password").css("border-color", "aquamarine");
     }
+    $(".errorMsg2").text("");
+  })
 
+  $("#Password2").blur(function () {
+    var Password = $("#Password").val();
     var repassword = $("#Password2").val();
     if (repassword == "") {
       $(".errorMsg2").text("请输入密码！");
@@ -175,18 +197,44 @@ $(function () {
     } else {
       $("#Password2").css("border-color", "aquamarine");
     }
+    $(".errorMsg2").text("");
+  })
 
+  $("#EnqueueTime").blur(function () {
     var date = $("#EnqueueTime").val();
     if (date == "") {
       $(".errorMsg2").text("请选择时间！");
       $("#EnqueueTime").css("border-color", "red");
       return false;
-    }else{
+    } else {
       $("#EnqueueTime").css("border-color", "aquamarine");
     }
-
     $(".errorMsg2").text("");
+  })
+  $(".btn2").click(function () {
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3000/posts',
+      data: {
+        username: $("input#StuID").val(),
+        password: $("#Password").val(),
+        name: $("#Username").val(),
+        email: $("#Email").val(),
+        department: $("department").val(),
+        jointime: $("#EnqueueTime").val(),
+        verifyParam: "",
+        csrf_token: $("input[name='csrfmiddlewaretoken']").val()
+      }
+    }).then(response=>{
+      console.log(response);
+    })
+
     return false;
+  })
+
+
+  $("#wert").click(function(){
+    
   })
 })
 

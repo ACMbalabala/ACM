@@ -317,21 +317,21 @@ button.ghost {
     transform:translateY(20%);
 }
 #Email{
-    width:320px;
+    width:100%;
 }
 #wert{
-    width: 80px;
+    width:160px;
     padding: 0;
 }
 #yan{
-    width: 130px;
+    width: 100%;
 }
 #yan2{
     width: 40px;
     padding: 0;
 }
 .yanz{
-    width:auto;
+    width:100%;
     height:auto;
     display: inline-flex;
 }

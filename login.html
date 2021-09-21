@@ -21,7 +21,7 @@
     </div>
     <div class="dowebok" id="dowebok">
         <div class="form-container sign-up-container">
-            <form action="user/addUser">
+            <form action="##">
                 <div class="container">
                     <div class="title1">
                         <h1>注册</h1>
@@ -42,7 +42,6 @@
                     <input type="email" id="Email" name="email" placeholder="电子邮箱" onblur="validate_email(this.value)">
                     <input type="button" id="wert" value="获取验证码">
                     <input type="text" id="yan" placeholder="验证码">
-                    <input type="button" id="yan2" value="验证">
                 </div>
                 
 
@@ -54,6 +53,7 @@
 
                 <label for="EnqueueTime">入队时间：</label>
                 <input type="date" id="EnqueueTime" name="enqueuetime" onblur="validate_enqueuetime(this.value)">
+                <input type="hidden" name="csrfmiddlewaretoken" value="">
                 <label for="department">学院：</label>
                 <select name="Department" id="department" onblur="validate_department(this.value)">
                     <option value="软件学院">软件学院</option>
