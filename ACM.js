@@ -211,30 +211,89 @@ $(function () {
     }
     $(".errorMsg2").text("");
   })
-  $(".btn2").click(function () {
-    axios({
-      method: 'POST',
-      url: 'http://localhost:3000/posts',
-      data: {
-        username: $("input#StuID").val(),
-        password: $("#Password").val(),
-        name: $("#Username").val(),
-        email: $("#Email").val(),
-        department: $("department").val(),
-        jointime: $("#EnqueueTime").val(),
-        verifyParam: "",
-        csrf_token: $("input[name='csrfmiddlewaretoken']").val()
-      }
-    }).then(response=>{
-      console.log(response);
-    })
 
+
+  $(".btn2").click(function () {
+    var verification = $("#yan").val();
+    if (verification == "") {
+      $(".errorMsg2").text("请输入验证码");
+    } else {
+      axios({
+        method: 'POST',
+        url: 'http://localhost:3000/posts',
+        data: {
+          username: $("input#StuID").val(),
+          password: $("#Password").val(),
+          name: $("#Username").val(),
+          email: $("#Email").val(),
+          department: $("department").val(),
+          jointime: $("#EnqueueTime").val(),
+          verification: $("#yan").val(),
+          verifyParam: "",
+          csrf_token: $("input[name='csrfmiddlewaretoken']").val()
+        }
+      }).then(response => {
+        console.log(response);
+      })
+
+      $(".errorMsg2").text("");
+    }
     return false;
   })
 
 
-  $("#wert").click(function(){
-    
+  $("#wert").click(function () {
+    var btnget = document.getElementById("wert");
+    btnget.disabled = true;
+    var email = $("#Email").val();
+    var emailPat = /^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/;
+    if (email == "") {
+      $(".errorMsg2").text("请输入邮箱！");
+      $("#Email").css("border-color", "red");
+      btnget.disabled = false;
+      return false;
+    } else if (!emailPat.test(email)) {
+      $(".errorMsg2").text("邮箱地址不合法");
+      $("#Email").css("border-color", "red");
+      btnget.disabled = false;
+      return false;
+    } else {
+      $("#Email").css("border-color", "aquamarine");
+      btnget.disabled = true;
+      useChangeBTN();
+      axios({
+        method: 'POST',
+        url: 'http://localhost:3000/posts',
+        data: {
+          username: $("input#StuID").val(),
+          email: $("#Email").val()
+        }
+      }).then(response => {
+        console.log(response);
+      })
+    }
+    $(".errorMsg2").text("");
   })
 })
 
+var time0 = 60;
+var time = time0;
+var t;
+function changeBTN() {
+  if (time > 0) {
+    $("#wert").val("(" + time + "s)" + "重新获取");
+    time = time - 1;
+  }
+  else {
+    var btnGet = document.getElementById("wert");
+    btnGet.disabled = false;
+    $("#wert").val("获取验证码");
+    clearInterval(t);
+    time = time0;
+  }
+}
+function useChangeBTN() {
+  $("#wert").val("(" + time + "s)" + "重新获取");
+  time = time - 1;
+  t = setInterval("changeBTN()", 1000);  // 1s调用一次
+}
