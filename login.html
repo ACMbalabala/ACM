@@ -11,7 +11,7 @@
 
 
 <body>
-    
+
     <div class="controls">
         <label class="controls__label">Number of circles</label>
         <input class="controls__slider" data-slider type="range" min="100" max="500" step="1" value="300" />
@@ -22,17 +22,31 @@
     <div class="dowebok" id="dowebok">
         <div class="form-container sign-up-container">
             <form action="user/addUser">
-                <h1>注册</h1>
+                <div class="container">
+                    <div class="title1">
+                        <h1>注册</h1>
+                        <span>请输入您的信息</span>
+                    </div>
+                    <div class="title2">
+                        <span class="errorMsg2"></span>
+                    </div>
+                </div>
 
-                <span>请输入您的信息</span>
                 <input type="text" id="StuID" name="StuID" placeholder="学号" onblur="validate_StuID(this.value)">
 
                 <input type="text" id="Username" name="username" placeholder="姓名"
                     onblur="validate_username(this.value)">
 
-                <input type="email" id="Email" name="email" placeholder="电子邮箱" onblur="validate_email(this.value)">
 
-                <input type="password" id="Password" name="password" placeholder="以字母开头只能包含字母、数字和下划线"
+                <div class="yanz">
+                    <input type="email" id="Email" name="email" placeholder="电子邮箱" onblur="validate_email(this.value)">
+                    <input type="button" id="wert" value="获取验证码">
+                    <input type="text" id="yan" placeholder="验证码">
+                    <input type="button" id="yan2" value="验证">
+                </div>
+                
+
+                <input type="password" id="Password" name="password" placeholder="密码：以字母开头只能包含字母、数字和下划线"
                     onblur="validate_password(this.value)">
 
                 <input type="password" id="Password2" name="password2" onblur="validate_password2(this.value)"
@@ -61,7 +75,7 @@
                     <option value="生命学院">生命学院</option>
                     <option value="外国语学院">外国语学院</option>
                 </select>
-                <button>注册</button>
+                <button class="btn2">注册</button>
             </form>
         </div>
         <div class="form-container sign-in-container str">
@@ -69,16 +83,16 @@
                 <div class="container">
                     <div class="title1">
                         <h1>登录</h1>
-                    <span>请输入您的账号</span>
+                        <span>请输入您的账号</span>
                     </div>
                     <div class="title2">
                         <span class="errorMsg"></span>
-                    </div>                   
-                </div> 
+                    </div>
+                </div>
                 <input type="text" placeholder="用户名/学号 如:2018302624" id="username">
                 <input type="password" placeholder="密码" id="password">
                 <input type="hidden" name="csrfmiddlewaretoken" value="">
-                <a href="resetpwd.html" >忘记密码？</a>
+                <a href="resetpwd.html">忘记密码？</a>
                 <button class="btn1">登录</button>
             </form>
         </div>

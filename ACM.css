@@ -217,13 +217,13 @@ button.ghost {
     height: 100px;
     display: inline-block;
 }
-.errorMsg{
+.errorMsg,.errorMsg2{
     color:red;
     font-size: medium;
     font-weight: bold;
     font-family: "楷体";
 }
-#username,#password{
+#username,#password,#StuID,#Username,#Email,#Password,#Password2,#EnqueueTime,#department,#yan{
     border-radius: 20px;
     border:1px solid aquamarine;
 }
@@ -315,4 +315,27 @@ button.ghost {
 /* Same effect for right */
 .dowebok.right-panel-active .overlay-right {
     transform:translateY(20%);
+}
+#Email{
+    width:124px;
+}
+#wert{
+    width: 80px;
+    padding: 0;
+}
+#yan{
+    width: 100px;
+}
+#yan2{
+    width: 40px;
+    padding: 0;
+}
+.yanz{
+    width:auto;
+    height:auto;
+    display: inline-flex;
+}
+#wert,#yan2{
+    border-radius: 20px;
+    border:1px solid yellow;
 }

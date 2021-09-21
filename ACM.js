@@ -69,7 +69,7 @@ function randomColor() {
 $(function () {
   $(".btn1").click(function () {
     var usernameText = $("#username").val();
-    var usernamePat = /^\w{10,11}$/;
+    var usernamePat = /^[0-9]{10}$/;
     if (usernameText == "") {
       $(".errorMsg").text("请输入用户名！");
       $("#username").css("border-color", "red");
@@ -103,6 +103,55 @@ $(function () {
     }).then(response=>{
       console.log(response);
     })
+  })
+
+  $(".btn2").click(function(){
+    var studentID = $("#StuID").val();
+    var studentIDPat = /^[0-9]{10}$/;
+    if (studentID == "") {
+      $(".errorMsg2").text("请输入用户名！");
+      $("#StuID").css("border-color", "red");
+      return false;
+    } else if (!studentIDPat.test(studentID)) {
+      $(".errorMsg2").text("学号命名不合法");
+      $("#StuID").css("border-color", "red");
+      return false;
+    } else {
+      $("#StuID").css("border-color", "aquamarine");
+    }
+
+    var studentName = $("#Username").val();
+    var studentNamePat = /^[\u4E00-\u9FA5A-Za-z]+$/;
+    if (studentName == "") {
+      $(".errorMsg2").text("请输入姓名！");
+      $("#Username").css("border-color", "red");
+      return false;
+    } else if (!studentNamePat.test(studentName)) {
+      $(".errorMsg2").text("姓名不合法");
+      $("#Username").css("border-color", "red");
+      return false;
+    } else {
+      $("#Username").css("border-color", "aquamarine");
+    }
+
+    var email = $("#Email").val();
+    var studentNamePat = /^[\u4E00-\u9FA5A-Za-z]+$/;
+    if (studentName == "") {
+      $(".errorMsg2").text("请输入姓名！");
+      $("#Username").css("border-color", "red");
+      return false;
+    } else if (!studentNamePat.test(studentName)) {
+      $(".errorMsg2").text("姓名不合法");
+      $("#Username").css("border-color", "red");
+      return false;
+    } else {
+      $("#Username").css("border-color", "aquamarine");
+    }
+
+
+
+    $(".errorMsg2").text("");
+    return false;
   })
 })
 
