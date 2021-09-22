@@ -65,7 +65,6 @@ function randomColor() {
 
   return colors[Math.round(Math.random() * colors.length)];
 }
-
 $(function () {
 
   $(".btn1").click(function () {
@@ -123,7 +122,7 @@ $(function () {
     $(".errorMsg2").text("");
     axios({
       method: 'POST',
-      url: 'http://localhost:3000/posts',
+      url: 'https://www.orangej.xyz/api/checkusername',
       data: {
         username: $("input#StuID").val()
       }
