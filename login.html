@@ -32,14 +32,14 @@
                     </div>
                 </div>
 
-                <input type="text" id="StuID" name="StuID" placeholder="学号" onblur="validate_StuID(this.value)">
+                <input type="text" id="StuID" name="StuID" placeholder="学号">
 
                 <input type="text" id="Username" name="username" placeholder="姓名"
                     onblur="validate_username(this.value)">
 
 
                 <div class="yanz">
-                    <input type="email" id="Email" name="email" placeholder="电子邮箱" onblur="validate_email(this.value)">
+                    <input type="email" id="Email" name="email" placeholder="电子邮箱">
                     <input type="button" id="wert" value="获取验证码">
                     <input type="text" id="yan" placeholder="验证码">
                 </div>
@@ -48,14 +48,14 @@
                 <input type="password" id="Password" name="password" placeholder="密码：以字母开头只能包含字母、数字和下划线"
                     onblur="validate_password(this.value)">
 
-                <input type="password" id="Password2" name="password2" onblur="validate_password2(this.value)"
+                <input type="password" id="Password2" name="password2"
                     placeholder="确认密码">
 
                 <label for="EnqueueTime">入队时间：</label>
-                <input type="date" id="EnqueueTime" name="enqueuetime" onblur="validate_enqueuetime(this.value)">
+                <input type="date" id="EnqueueTime" name="enqueuetime" >
                 <input type="hidden" name="csrfmiddlewaretoken" value="">
                 <label for="department">学院：</label>
-                <select name="Department" id="department" onblur="validate_department(this.value)">
+                <select name="Department" id="department" >
                     <option value="软件学院">软件学院</option>
                     <option value="计算机学院">计算机学院</option>
                     <option value="自动化学院">自动化学院</option>
