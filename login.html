@@ -4,14 +4,16 @@
 <head>
     <meta charset="utf-8">
     <title>ACM基地注册页面</title>
-    <link href="./ACM.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
+    <link href="ACM.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/view-design/dist/iview.min.js"></script>
     <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 
 <body>
-
     <div class="controls">
         <label class="controls__label">Number of circles</label>
         <input class="controls__slider" data-slider type="range" min="100" max="500" step="1" value="300" />
@@ -51,9 +53,9 @@
                 <input type="password" id="Password2" name="password2"
                     placeholder="确认密码">
 
-                <label for="EnqueueTime">入队时间：</label>
+                <!-- <label for="EnqueueTime">入队时间：</label>
                 <input type="date" id="EnqueueTime" name="enqueuetime" >
-                <input type="hidden" name="csrfmiddlewaretoken" value="">
+                <input type="hidden" name="csrfmiddlewaretoken" value=""> -->
                 <label for="department">学院：</label>
                 <select name="Department" id="department" >
                     <option value="软件学院">软件学院</option>
@@ -112,7 +114,7 @@
         </div>
     </div>
 
-    <script src="./ACM.js"></script>
+    <script src="ACM.js"></script>
 
 </body>
 
