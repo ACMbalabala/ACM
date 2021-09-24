@@ -43,19 +43,18 @@
                     <input type="button" id="wert" value="获取验证码">
                     <input type="text" id="yan" placeholder="验证码">
                 </div>
-                
+
 
                 <input type="password" id="Password" name="password" placeholder="密码：以字母开头只能包含字母、数字和下划线"
                     onblur="validate_password(this.value)">
 
-                <input type="password" id="Password2" name="password2"
-                    placeholder="确认密码">
+                <input type="password" id="Password2" name="password2" placeholder="确认密码">
 
                 <!-- <label for="EnqueueTime">入队时间：</label>
                 <input type="date" id="EnqueueTime" name="enqueuetime" >
                 <input type="hidden" name="csrfmiddlewaretoken" value=""> -->
                 <label for="department">学院：</label>
-                <select name="Department" id="department" >
+                <select name="Department" id="department">
                     <option value="软件学院">软件学院</option>
                     <option value="计算机学院">计算机学院</option>
                     <option value="自动化学院">自动化学院</option>
@@ -76,6 +75,13 @@
                     <option value="外国语学院">外国语学院</option>
                 </select>
                 <button class="btn2">注册</button>
+                <div class="control">
+                    <a href="##" id="control">您是管理员吗？</a>
+
+                    <input id="adver" type="text" placeholder="管理员验证码">
+
+                </div>
+
             </form>
         </div>
         <div class="form-container sign-in-container str">

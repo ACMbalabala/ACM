@@ -87,6 +87,7 @@ function showMessage(message, type) {
   }, 2200);
 }
 
+$("#adver").hide();
 // 登录块
 $(function () {
   $(".btn1").click(function () {
@@ -127,8 +128,8 @@ $(function () {
       success:function(response){
         window.location.href="##";
       },
-      error:function(){
-        showMessage("用户名或密码错误！",0);
+      error:function(res){
+        showMessage(res["msg"],0);
       }
     })
     // .then(response => {
@@ -164,8 +165,8 @@ $(function () {
       success:function(response){
         window.location.href="##";
       },
-      error:function(){
-        showMessage("用户名错误！",0);
+      error:function(res){
+        showMessage(res["msg"],0);
       }
     })
     // .then(response => {
@@ -266,6 +267,19 @@ $(function () {
     //$(".errorMsg2").text("");
   })
 
+  let s = 0;
+  $("#control").click(function(){
+    if(s==0){
+      $("#adver").fadeIn("slow");
+      s =1;
+      $("a#control").html("您不是管理员吗？");
+    }else if(s == 1){
+      $("#adver").fadeOut("slow");
+      s = 0;
+      $("a#control").html("您是管理员吗？") ;
+    }
+    console.log(s);
+  })
 
   // 注册
   $(".btn2").click(function () {
@@ -285,15 +299,15 @@ $(function () {
           department: $("department").val(),
           // joinTime: () => $("#EnqueueTime").val() == '' ? "None" : $("#EnqueueTime").val(),
           emailVerify: $("#yan").val(),
-          // admin : false, -> boolean
-          adminVerify: "",
+          admin:s,
+          adminVerify: $("adver").val(),
           csrf_token: $("input[name='csrfmiddlewaretoken']").val()
         },
         success:function(response){
           window.location.href="##";
         },
-        error:function(){
-          showMessage("验证码错误！",0);
+        error:function(res){
+          showMessage(res["msg"],0);
         }
       })
       // .then(response => {
@@ -338,8 +352,8 @@ $(function () {
         success:function(response){
           window.location.href="##";
         },
-        error:function(){
-          showMessage("无效邮箱！",0);
+        error:function(res){
+          showMessage(res["msg"],0);
         }
       })
       // .then(response => {
