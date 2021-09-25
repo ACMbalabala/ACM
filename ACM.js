@@ -80,6 +80,7 @@ function showMessage(message, type) {
     messageJQ.addClass("showMessageSuccess");
   }
   /**先将原始隐藏，然后添加到页面，最后以600秒的速度下拉显示出来*/
+  // 
   messageJQ.hide().appendTo("body").slideDown(300);
   /**3秒之后自动删除生成的元素*/
   window.setTimeout(function () {
